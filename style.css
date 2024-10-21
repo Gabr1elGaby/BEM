@@ -1,0 +1,420 @@
+
+/* WARNA YANG TELAH DITETAPKAN */
+:root{
+    --primary: red;
+    --bg: #fff;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* UNTUK KESELURUHAN */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none; 
+}
+
+
+/* BAGIAN BODY */
+body{
+    font-family: 'Poppins', 'sans-serif';
+    background-color: var(--bg) ;
+    color: #010101;
+}
+
+/* BAGIAN NAVBAR */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    list-style-type: none;
+    
+}
+
+/* LOGO */
+.navbar .logo{
+    width: 10%;
+}
+
+.navbar .navbar-nav .menu{
+    display: flex;
+
+}
+
+.navbar .navbar-nav .menu .sub-menu a{
+    padding: 0;
+}
+
+.navbar .navbar-nav a{
+    color: #fff;
+    display: inline-block;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover{
+
+    color: var(--primary)
+}
+
+.navbar .navbar-nav a::after{
+    content: '' ;
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.01rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+
+}
+
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar ,.navbar-extra a {
+    color: #010101;
+    margin: 0 0.5rem;
+}
+
+.navbar ,.navbar-extra a:hover{
+
+    color: var(--primary);
+}
+
+#menu-box{
+    display: none;
+}
+
+
+.home{
+    min-height: 155vh;
+    display: flex;
+    align-items: center;
+    background-image: url(BEM3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10% 60%;
+    position: relative;
+    mask-image: linear-gradient(rgba(0, 0, 0, 1)90%, rgba(0, 0, 0, 0));
+}
+
+.home .content{
+    padding: 5rem 10%;
+    max-width: 90rem;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 7REM;
+
+}
+
+.home .content h2{
+    font-size: 7rem;
+    color: var(--primary);
+    
+ }
+
+.home .content span{
+    color: #fff;
+}
+
+
+/* BEM USH ARTA LOKA */
+.profile, .visimisi, .struktur{
+    padding: 7rem 7% 1.3rem;
+}
+
+.profile .content .logo{
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+}
+
+.profile .content .logo img{
+    width: 30%;
+    margin: auto;
+}
+
+.profile .content h2, .struktur .struk h2{
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+
+}
+
+.profile .content span{
+    color: var(--primary);
+}
+
+.profile .content p{
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    display: flex;
+}
+
+.profile .content h3{
+    height: 3rem;
+}
+
+.profile .content a{
+    font-size: 1.5rem;
+}
+
+.profile .content a:hover{
+    color: var(--primary);
+}
+
+.profile .content button{
+    border-radius: 3px;
+    width: 15rem;
+    height: 2rem;
+    border-style: solid;
+    border-color: #010101;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.profile .content button::after{
+    content: "";
+    position: absolute;
+    background-color: var(--bg);
+}
+
+.profile .content button:hover{
+    background-color:#010101;
+}
+
+/* KATA KATA */
+
+.visimisi .vm h1{
+    color: #010101;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.visimisi .vm p{
+    color: #010101;
+    font-size: 1.4rem;
+
+}
+
+.struktur .struk .gam-struk{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.struktur .struk .gam-struk img{
+   max-width: 100%;
+   height: auto;
+}
+
+.floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+
+
+/* TAMPILAN PADA HP, TABLET ATAU YG LAINNYA */
+
+/* Untuk resolusi HP */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+
+    
+
+    #menu-box{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #010101;
+        width: 15rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav .menu{
+        display:block;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar-nav .menu .item a{
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        display: block;
+        padding: 5px 30px;
+        line-height: 60px;
+    }
+
+    .navbar-nav .menu .item a:hover{
+        background: red;
+        transition: 0.3s;
+    }
+
+    .navbar-nav .menu .item i{
+        margin-right: 15px;
+    }
+
+    .navbar-nav .menu .item a .dropdown{
+        position: absolute;
+        right: 0;
+        margin: 20px;
+        transition: 0.3s ease;
+    }
+
+    .navbar-nav .menu .item .sub-menu{
+        background: #010101;
+    }
+   
+
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding-right: 5rem;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    .home .content{
+        padding: 1rem;
+    }
+
+    .home{
+        background-image: url(BEM2.jpg);
+        background-position: center center;
+        background-size:cover;
+        align-items: center;
+        min-height: 100vh; 
+        mask-image: none; 
+        background-repeat: no-repeat;
+        position: relative;
+        mask-image: linear-gradient(rgba(0, 0, 0, 1)90%, rgba(0, 0, 0, 0));
+    }
+
+    .profile .content .logo{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        }
+}
+
+/* Untuk resolusi tablet */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    html {
+        font-size: 90%;
+    }
+    #menu-box{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #010101;
+        width: 15rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav .menu{
+        display:block;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar-nav .menu .item a{
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        display: block;
+        padding: 5px 30px;
+        line-height: 60px;
+    }
+
+    .navbar-nav .menu .item a:hover{
+        background: red;
+        transition: 0.3s;
+    }
+
+    .navbar-nav .menu .item i{
+        margin-right: 15px;
+    }
+
+    .navbar-nav .menu .item a .dropdown{
+        position: absolute;
+        right: 0;
+        margin: 20px;
+        transition: 0.3s ease;
+    }
+
+    .navbar-nav .menu .item .sub-menu{
+        background: #010101;
+    }
+   
+
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding-right: 5rem;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    .home .content{
+        padding: 1rem;
+    }
+
+    .home{
+        background-image: url(BEM3.jpg);
+        background-position: center center; /* Menempatkan gambar di tengah */
+        background-size: cover;
+        min-height: 100vh; /* Sesuaikan dengan tinggi layar HP */
+        mask-image: none; /* Hapus efek mask jika tidak diinginkan */
+        background-repeat: no-repeat;
+        position: relative;
+        mask-image: linear-gradient(rgba(0, 0, 0, 1)90%, rgba(0, 0, 0, 0));
+    }
+
+    .profile .content .logo{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        }
+}
